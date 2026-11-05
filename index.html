@@ -3,24 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фотосессия</title>
+    <title>Катерина (Студія FOCUS, 21.10.2026)</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: #121212;
             color: #fff;
             margin: 0;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
         }
-        h1 {
-            margin-bottom: 10px;
+
+        /* Шапка профиля / информации о фотографе */
+        .header-info {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            background: #1e1e1e;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
         }
-        p.subtitle {
+        .header-info h1 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+        .header-info p {
             color: #aaa;
-            margin-bottom: 25px;
+            margin: 5px 0;
+            font-size: 15px;
         }
-        /* Стиль для кнопки скачивания */
+        .phone {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Кнопка Instagram с иконкой */
+        .insta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-divider;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 15px;
+            transition: opacity 0.2s, transform 0.1s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .insta-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        .insta-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* Главная кнопка скачивания архива */
         .download-btn {
             display: inline-block;
             background-color: #0070f3;
@@ -38,29 +82,35 @@
             background-color: #0051d5;
             transform: translateY(-2px);
         }
-        /* Сетка для плитки */
+
+        /* Адаптивная сетка для фоток разной ориентации */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 16px;
             max-width: 1200px;
             margin: 0 auto;
-            text-align: left;
         }
         .item {
             background: #1e1e1e;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #181818;
+            min-height: 250px; /* Минимальная высота контейнера */
             transition: transform 0.2s;
         }
         .item:hover {
-            transform: scale(1.02);
+            transform: scale(1.01);
         }
         .gallery img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain; /* Сохраняет пропорции: и вертикальные, и горизонтальные влезут целиком без обрезки */
             display: block;
             cursor: pointer;
         }
@@ -68,202 +118,212 @@
 </head>
 <body>
 
-    <h1>Отака хуйня, собачка...</h1>
-    <p class="subtitle">Можно клацнуть на любую фотку, шоб открыть в исходном качестве</p>
+    <!-- Информационный блок с контактами -->
+    <div class="header-info">
+        <h1>Катерина (Студія FOCUS, 21.10.2026)</h1>
+        <p>Ваш фотограф — <span class="phone">Тетяна Куликова</span></p>
+        <p>Телефон для зв'язку: <span class="phone">+38 (097) 143-92-88</span></p>
+        
+        <!-- Кнопка Instagram с SVG-иконкой -->
+        <a href="https://www.instagram.com/tanya_photoniko/" class="insta-btn" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram
+        </a>
+    </div>
 
     <!-- Кнопка скачивания всех фото -->
     <a href="https://drive.google.com/uc?export=download&id=1RDmt4XX4ugFEI8EfS5oOSQ4_YW0wjXMx" class="download-btn" target="_blank">
-        📥 Скачать все фотки архивом
+        📥 Завантажити всі фото архівом
     </a>
 
     <div class="gallery" id="image-gallery">
-        <!-- Скрипт автоматически добавит сюда фото -->
+        <!-- Скрипт подставит сюда фото -->
     </div>
 
     <script>
-        // Сюда вставляете ваши прямые ссылки из Google Диска
-        const photoLinks = [
-"https://lh3.googleusercontent.com/d/1ovftLGBTJ9AdNuSa0-nR7fAE7tYCuT4m",
-"https://lh3.googleusercontent.com/d/1XJl6vdpTnKytw7rp8VLX8JSRP5FX2_BR",
-"https://lh3.googleusercontent.com/d/1TvWL7eUOSNHhUebW3xNc70wUWZoI7aQc",
-"https://lh3.googleusercontent.com/d/1nbMUXqzm4ttslo83E1nQo6jTUUQAqje9",
-"https://lh3.googleusercontent.com/d/1RjtWZNHshAVuIjRvHD1t4iq5sP12SAfU",
-"https://lh3.googleusercontent.com/d/17EsHekxxVdyEMR-JR1lWU0RkogHTdeXy",
-"https://lh3.googleusercontent.com/d/1dJS3rauwKaFZEpcIsJJgNYgvBBtv0ysQ",
-"https://lh3.googleusercontent.com/d/13D_oPUMvwj4CYF6BEluW03c3oMK1ByI5",
-"https://lh3.googleusercontent.com/d/1dOfpjjY9xVTu5I6ZnYQa7KWuTg9kJyhU",
-"https://lh3.googleusercontent.com/d/1_IIK3vUDNUrPlsGJ8a4EPcTy2tk0nvJV",
-"https://lh3.googleusercontent.com/d/1xUZgdjSvK-AXLVBdzHiLCrSgaQJ3nWRV",
-"https://lh3.googleusercontent.com/d/1d9EZZkawiU5fCLnxntY9YvJVdgZbpX2v",
-"https://lh3.googleusercontent.com/d/1p55SeRFL97qUYZa9x4u-nxJyGT_JXV0j",
-"https://lh3.googleusercontent.com/d/1u0Jq1W6wg5uqXIL_URYhFgzzeKAqZstx",
-"https://lh3.googleusercontent.com/d/1SSf5w07bXopzocbxQGmsMmhUJFj89mI1",
-"https://lh3.googleusercontent.com/d/15Z7ca-vowBRJv0TLW6vKathp6C7nnSr5",
-"https://lh3.googleusercontent.com/d/1_jlrHePw6oaKLoGB38lO860AeOsoIEKO",
-"https://lh3.googleusercontent.com/d/1IcWU8mjmf8FH5NqP_eFIKQMB_-nPkYGD",
-"https://lh3.googleusercontent.com/d/1Vc8WPzKV-2bL_W-uXnXIyZgKkJ5KbMrg",
-"https://lh3.googleusercontent.com/d/1GvYG84a_q-ds7hjOPDc5J1hhdlQkyhOX",
-"https://lh3.googleusercontent.com/d/19Uo-NRP3EcILY7trE802Y8jKGSSENdT-",
-"https://lh3.googleusercontent.com/d/1gQXowRohdeNVC3E1SMZLsese0AQyMrg_",
-"https://lh3.googleusercontent.com/d/1eIUIfAVR20UilIIYfje1MWV2DUH0DpqX",
-"https://lh3.googleusercontent.com/d/1XrPsQJOxLOdGv0rg5-8r7LsmCVQrXdBd",
-"https://lh3.googleusercontent.com/d/1l39xoN0RDBf7RsvjvZ9QXt4ztCuVn0Ai",
-"https://lh3.googleusercontent.com/d/1DRiwlOIqEotfnCVp0p2_SBHMrEpOW99u",
-"https://lh3.googleusercontent.com/d/1HaiOZFb_U84xkCAZ1ZcPpsebBMihBWkX",
-"https://lh3.googleusercontent.com/d/1C197_-jJPtll64J-16F8lgWz_6WAmz_w",
-"https://lh3.googleusercontent.com/d/1YJz1xS2rG87YCPpfw3AGX9LsM_fsJxki",
-"https://lh3.googleusercontent.com/d/1xFHKjjVhcgOaVbP307imbYm791YhWpMB",
-"https://lh3.googleusercontent.com/d/1I4Ys49Mmp1e0UTGt_Q9wj6PXG2AEAu8B",
-"https://lh3.googleusercontent.com/d/1ZkGvV9bWipkn6QKHSoyiouP0L2bRSX0q",
-"https://lh3.googleusercontent.com/d/1eDf3yryLSLRJVVw14ixxf5CIBWVn45j3",
-"https://lh3.googleusercontent.com/d/19p6U3F_ekR1KeIF0ciX_rvBd8A2NWOH5",
-"https://lh3.googleusercontent.com/d/1jabf6aRsv3iBCJ7WaN2UZHZF2CD3jbDB",
-"https://lh3.googleusercontent.com/d/1XifK_bmIslHmqrZXiUsUQNEygGtvgLeZ",
-"https://lh3.googleusercontent.com/d/1-iftJsIgKxTqmTVnedkODDpUy83jb_1U",
-"https://lh3.googleusercontent.com/d/1nY61QM3Tnv8dgvvIg__dgrTwXnMMxRzZ",
-"https://lh3.googleusercontent.com/d/1xL6UjvjmsJoF_HIvaXBRdrIyQjfNzqYg",
-"https://lh3.googleusercontent.com/d/1u652XsU2lvNNAymIp_GoiOuxa38HZ0c_",
-"https://lh3.googleusercontent.com/d/1erq5XJ5Jic5OMG_gbjAcjeH5tEWeYD-h",
-"https://lh3.googleusercontent.com/d/1tXLmBH4sCkk-c42AsJLncrJtwy6Jh0z_",
-"https://lh3.googleusercontent.com/d/1JFpmBniT9YEFYv37t3HWQhBE7g9L_hf6",
-"https://lh3.googleusercontent.com/d/1uMkpXi47U5q1JyCuX73zYC_kDwwmNrKG",
-"https://lh3.googleusercontent.com/d/1ABRMGiYOftQcaPmJ6VBXzI60oGJj_Peh",
-"https://lh3.googleusercontent.com/d/1sKOjDG_RYINp1aODRnHSfvUY8DbyykZG",
-"https://lh3.googleusercontent.com/d/1zpzV1N2Riz_529nyC7lo8A-zU-Dicq3x",
-"https://lh3.googleusercontent.com/d/1JDnW6OuWlYGjKQsIcCskheKeSdEnguJs",
-"https://lh3.googleusercontent.com/d/19freljnK3fTYQx3lZzLYQ8WhV3L35w0l",
-"https://lh3.googleusercontent.com/d/17_13wtLM2exWTXev0saRxofFW6Tm2uQs",
-"https://lh3.googleusercontent.com/d/1FunKphFCD4ODOnVZWtBpY6bZwrGNeSBR",
-"https://lh3.googleusercontent.com/d/1e6OjwgTWJmN_eBXcOJ-SSDWNLEUCZOXl",
-"https://lh3.googleusercontent.com/d/1l_l0xilxhJ9VnEUcHXuKvev_mIJJ1_20",
-"https://lh3.googleusercontent.com/d/1ttCIdL9cHMM2lZXolCh04tp-l-2rs1zk",
-"https://lh3.googleusercontent.com/d/16sjsO-OWXdE40xaceerw3J3BTPQ_znzX",
-"https://lh3.googleusercontent.com/d/1nUhNxe0WA4jZ5XmfB7xGx9sWOfRSIxxb",
-"https://lh3.googleusercontent.com/d/1icaBCIPcap9AlgwQc12CjzFoIFX5DRyV",
-"https://lh3.googleusercontent.com/d/1NZMPSG-won4qfG1aXjRfpf4Up_4fDIF4",
-"https://lh3.googleusercontent.com/d/1uYIrd5nG2jDifoRnWDRVdxWoFc7lYeBw",
-"https://lh3.googleusercontent.com/d/1xKz79DIWHiCiXUzrFj0pfIaF_ZOqK0Y9",
-"https://lh3.googleusercontent.com/d/1cJtgyn1JNCWDY66LxWW5graXVRoubD3e",
-"https://lh3.googleusercontent.com/d/1jyix5wjBjOcW4cuVLnIsKd8lLF-exmFR",
-"https://lh3.googleusercontent.com/d/1NFj0Jucofo-DFQu5djsPZr-ImPHh5Os6",
-"https://lh3.googleusercontent.com/d/1ccMPDvHiZ_T2JDk_QITWD3jpS7QSVgIE",
-"https://lh3.googleusercontent.com/d/1cA2-nxenlQ7VZky3af39JmGO7UIfy5mn",
-"https://lh3.googleusercontent.com/d/1jOS9-pGhJO_LK0kh4rLg5Hwsj0OkGFoc",
-"https://lh3.googleusercontent.com/d/1rUuC6dSf3wgehsiw7SpXTku45WfWwFsh",
-"https://lh3.googleusercontent.com/d/1WMeTWH-rHj7eR-7jMWuIdK06CEACLcq8",
-"https://lh3.googleusercontent.com/d/1KTdwSsmcfT58zUj6BLCI-GdXN1vDwOu0",
-"https://lh3.googleusercontent.com/d/1rPZZTM7vkcOiCiD5j2QnU35EeuaxY4Xt",
-"https://lh3.googleusercontent.com/d/1AE3-ne2nf2fwRqOsXfCpWkXOK5qv-ln5",
-"https://lh3.googleusercontent.com/d/1I4IsA2p1qclbEraHdHL5JJh29J1z_Uk3",
-"https://lh3.googleusercontent.com/d/1XhfZ2p6DG43u0t4BBxF_FAKzWLSNgj-5",
-"https://lh3.googleusercontent.com/d/1yS1KXd1KiUdsiBWqrceqWtWd3Hr2f1Ni",
-"https://lh3.googleusercontent.com/d/1IbRa_7VPzk6OCA0EXgQaPt69HskUl4PJ",
-"https://lh3.googleusercontent.com/d/11Dt0HrmzagSK0KUzZ4WB4dPm1N2sIdWS",
-"https://lh3.googleusercontent.com/d/1q2n3SF2FfTmeb01pNVN7Ut6pnPBS8MO4",
-"https://lh3.googleusercontent.com/d/1CQpqoXVSFQAX7Can_ceUWry5b_OXuZoz",
-"https://lh3.googleusercontent.com/d/1_RZdqzm19zwCGcniNvSaX1pS6cRrie8F",
-"https://lh3.googleusercontent.com/d/1igXZ-8VbNRHFQZIkuhBiWOO0KiYG15En",
-"https://lh3.googleusercontent.com/d/1zPHYfc_6E-ZB55FwSQqCf696A1xql1px",
-"https://lh3.googleusercontent.com/d/14l5t0XbRzUo2q94XnYTf94FyRIpWC8SX",
-"https://lh3.googleusercontent.com/d/18yJYsoIB2_jwflWRHMoPwyZu_Boeq_MK",
-"https://lh3.googleusercontent.com/d/19hLVaPnJyHtXitXKgaCbP0jxBmGhDmkd",
-"https://lh3.googleusercontent.com/d/141vSt4RUvDUTMAaRI1gngLN0HZSpKlXa",
-"https://lh3.googleusercontent.com/d/1dDcjSKwJGqeNYaxToHEyujXR4aAVsbUs",
-"https://lh3.googleusercontent.com/d/1fllVrV7P6SdpJx6VF-1pwO5sWJH9QHM3",
-"https://lh3.googleusercontent.com/d/1lBguyJnAqB2AJWfloKtfRi6jMHSpphtj",
-"https://lh3.googleusercontent.com/d/1Pqq4EMSyU41QbaY08IiQ7Xjv2W3OG9iZ",
-"https://lh3.googleusercontent.com/d/158-g6T6buQ2040lXWFYGPuWGyn1VKAov",
-"https://lh3.googleusercontent.com/d/1bCFAKRX0v-rmdpwRxjQ-Plxu7E_ceBYm",
-"https://lh3.googleusercontent.com/d/1uaZGJPoIahNzoj9TkgQIoG5SUlDvZ5Cr",
-"https://lh3.googleusercontent.com/d/1V9zpXFPAk2S2XSwdKMVlhUQbL2gnGq7u",
-"https://lh3.googleusercontent.com/d/1aZ-AYZoJdIMyYTQcQ4qUSwjBQxFqLy3O",
-"https://lh3.googleusercontent.com/d/1XNzVYeT6XytFXjwu0Ybrm1YyTBxLGZgu",
-"https://lh3.googleusercontent.com/d/1ODRiEwAnTwKnex2IaQnxn-Qrti4BccUc",
-"https://lh3.googleusercontent.com/d/1LGYyormCc8hHWf32TuO17bJSynmOTKxc",
-"https://lh3.googleusercontent.com/d/1fLwwqdUcN16-RQKi6ccFDTC2ury1-zqW",
-"https://lh3.googleusercontent.com/d/1snTphYESftU_cn8WrCnfNksaaqfnXnHV",
-"https://lh3.googleusercontent.com/d/1SvxO8yxY4jQL13DygJkZZTQ18pdVq5Js",
-"https://lh3.googleusercontent.com/d/1i3F81EtOiTDwkD3bkTA6TKj3X5kfb4Y6",
-"https://lh3.googleusercontent.com/d/1wN7qJ05a_7icGdyfE3Or8PRJ7VIwW_oK",
-"https://lh3.googleusercontent.com/d/1YpxD-rHOUGxb41MLMql9RhN2al23QwJp",
-"https://lh3.googleusercontent.com/d/1h41wRQnp9lqqQzchVRrZXw56Ck0Ff3Yf",
-"https://lh3.googleusercontent.com/d/1whdPNTlIewWuoDXU7Qz2z04kmt7sqnZB",
-"https://lh3.googleusercontent.com/d/1oL-s7gj8nWBCN-o0JNOXW2ueTDaUHwhw",
-"https://lh3.googleusercontent.com/d/1KP7y1UmDwMKj4QHvkEIfQZNJrAKg_zXR",
-"https://lh3.googleusercontent.com/d/1OeOJrBHOG-VP4xuixex8OtWS90dvRhlv",
-"https://lh3.googleusercontent.com/d/1WQ-YOLlouqno9K8wEjFDlimWXfeJZDzG",
-"https://lh3.googleusercontent.com/d/10jKq6fghS1kYYwxhyA6Nus6sKxvjep33",
-"https://lh3.googleusercontent.com/d/14yIgfJ9hT_9KhEbsjYcyqoV33GwwTxWv",
-"https://lh3.googleusercontent.com/d/1vZkXn2PVaAM19XYYI6MNn0p4eznSP_VT",
-"https://lh3.googleusercontent.com/d/1LmxfYBh4Kw_Aohwt_6AnoEvEt_m-N8Xl",
-"https://lh3.googleusercontent.com/d/145Omsk4WFD6pX6BCyFuCX1uAxzWaDWU6",
-"https://lh3.googleusercontent.com/d/1tFmTZH8Dr6Hvr5rviusqfUBieX8_NC7t",
-"https://lh3.googleusercontent.com/d/1kRpFPijG0WMW4f8uoZ7qfVRj-Qm733rr",
-"https://lh3.googleusercontent.com/d/1o_ADKagVByvw0hK11Wk2EHfhKC_pUpo2",
-"https://lh3.googleusercontent.com/d/1VZIHXsUI3mLaAO1vJ64OnQKvoKwFHlP9",
-"https://lh3.googleusercontent.com/d/1e-0IdLQiRb4xfuzi8ZlA8qN42IYuBm2b",
-"https://lh3.googleusercontent.com/d/1bU2-Ynwcs_NAzWV6qpB3BN7eGCNUNg-V",
-"https://lh3.googleusercontent.com/d/1WttcY9bBIc9EEkzvFy7OsR1-F1by3cs3",
-"https://lh3.googleusercontent.com/d/1dafBBhYLdL9I7G3CISGJ402Srq06qEKc",
-"https://lh3.googleusercontent.com/d/1gYqDV5GcbQ1x9uQzsq8AzE-W73DhPvYl",
-"https://lh3.googleusercontent.com/d/1cVSj23AiLPlfNWW9p3dcrtEdA0ZOFqJo",
-"https://lh3.googleusercontent.com/d/1VaaLq9MgNcM4OAzrIivcM9oqlUkPqow1",
-"https://lh3.googleusercontent.com/d/1Ejnhw4pwq9SyQrF4cqDpJ3DzKNHnlSed",
-"https://lh3.googleusercontent.com/d/13v4ccRJqEDFPlS9ZobX6zlgkoMjxuThC",
-"https://lh3.googleusercontent.com/d/128nqrksGVP15c1FhuPrr7GpumC4M6Nrc",
-"https://lh3.googleusercontent.com/d/1Y1-W8Q9DmZfUceknYdSHzLuq5CSy3ddj",
-"https://lh3.googleusercontent.com/d/1WGU8yKnoJ9Q043lGrx0m6hxmecmZScXv",
-"https://lh3.googleusercontent.com/d/1TQ_DvswXhXuaVSMUIlAo7uLv2dDBWed6",
-"https://lh3.googleusercontent.com/d/1DV3QqOItOMsUSKH8L6v3LkopzoExSjsI",
-"https://lh3.googleusercontent.com/d/1CHrHnv9sbckLgjuJd98rXAwwHkjRdDmY",
-"https://lh3.googleusercontent.com/d/1BkZ72Ej-OVqtU2zhNGR9-UgSSW6POnEv",
-"https://lh3.googleusercontent.com/d/1gH5lH8j250mY5bmoZvxIdcrPZlMWfwq9",
-"https://lh3.googleusercontent.com/d/1A-xJ8DY7lWPFpmdjwQdGI3KEihHBjyAd",
-"https://lh3.googleusercontent.com/d/1knElKlpAgr0QOpTRZfDV_1nU3YgTzFy_",
-"https://lh3.googleusercontent.com/d/1IqbNJ--u8A3L-IFaQdcz6nG2I_i06xWk",
-"https://lh3.googleusercontent.com/d/1iPId_2Fda9fzhrw9029Cch3pLJJF3Fo4",
-"https://lh3.googleusercontent.com/d/1wWuOBpS080CoXMg4J_dKLcTa6YT_K8Iu",
-"https://lh3.googleusercontent.com/d/1lsdbSO_MtjQqqmVqGa3_ulMquZjsHpKT",
-"https://lh3.googleusercontent.com/d/1W2yWSd2e5H8XwZV_4y3foRjElAAbu87k",
-"https://lh3.googleusercontent.com/d/1D_H22kn5kr9ZNUz-CvPhdiWLbg6BzycH",
-"https://lh3.googleusercontent.com/d/1dAK9Njy1ku92wh0810Ooflr2RaQlmOu0",
-"https://lh3.googleusercontent.com/d/1pqj-wKzYNyH7kOqE9CktfL9J8eu_cF08",
-"https://lh3.googleusercontent.com/d/1sJz9NY7w5NnbuKX08aIRiLKuYs53DuUH",
-"https://lh3.googleusercontent.com/d/1U_jYNrgZzjcm5Q6dAvDXIwiybeSNe_ET",
-"https://lh3.googleusercontent.com/d/1No1p20fjfPLxYswNPtb2QSw0MjCBJg84",
-"https://lh3.googleusercontent.com/d/1ci_Fk5fkTmQEJChPqhvasa6ABdn_nHl-",
-"https://lh3.googleusercontent.com/d/1LA7XZkxkgddAdOQFACq-EVtWQp_I3LWt",
-"https://lh3.googleusercontent.com/d/16RxBofsGagrj0rgBPAeVp50gIEf0CTEZ",
-"https://lh3.googleusercontent.com/d/1lNWQc3OZlhX0spW45U1saCoJelWYtYFh",
-"https://lh3.googleusercontent.com/d/1WSfYtz9tiKG_NF9h1_Ng_ca2zAfKQHk3",
-"https://lh3.googleusercontent.com/d/1E0f-3cCHX4lvh5GqbLvUK19bSi7EsvcD",
-"https://lh3.googleusercontent.com/d/1DOwrQYr8hSJ5SEZP81iu6J26JRjHGqgI",
-"https://lh3.googleusercontent.com/d/1_ttjxEKcozAtmdngMtkcYtMhd0k7ror5",
-"https://lh3.googleusercontent.com/d/1VHzoCaJNWmr6aaiUaK8YZ4c2xsTX_BKW",
-"https://lh3.googleusercontent.com/d/19XqKboSua6Ypwsg7pg0EONVWfjRF9MZU",
-"https://lh3.googleusercontent.com/d/1q_fV4njukccYARCVg0YedDOwEX0-4A6U",
-"https://lh3.googleusercontent.com/d/1n0QAasCIxRNyvcAyvC68wk8_teh1_Mlk",
-"https://lh3.googleusercontent.com/d/13Pimt9I28Z7_OYku3hju1XeMeRiIQq-L",
-"https://lh3.googleusercontent.com/d/1Ym1tJiTeSKyZpyj3wJ-90Ny4x2zXottw",
-"https://lh3.googleusercontent.com/d/1fE4Y0npnXKWTtp153pOustdFu6Vhwh8v",
-"https://lh3.googleusercontent.com/d/1CeHe5JCZYL0RkykPyiAOImUU8AJgZGNf",
-"https://lh3.googleusercontent.com/d/1Y-rW_H7RzOcU3GABzNXbQqejF0cBWqP7",
-"https://lh3.googleusercontent.com/d/10VIKNCs6GRSqCOSHCpO6OE0i4Eb5JneA",
-"https://lh3.googleusercontent.com/d/188QdHQrDcNf51mAzEc5XjfrI9qEBV5Qq"
+        // Вставляем список парных ссылок, сгенерированных скриптом
+        const photos = [
+  { thumb: "https://lh3.googleusercontent.com/d/1ovftLGBTJ9AdNuSa0-nR7fAE7tYCuT4m", original: "https://drive.google.com/uc?export=download&id=1ovftLGBTJ9AdNuSa0-nR7fAE7tYCuT4m" },
+  { thumb: "https://lh3.googleusercontent.com/d/1XJl6vdpTnKytw7rp8VLX8JSRP5FX2_BR", original: "https://drive.google.com/uc?export=download&id=1XJl6vdpTnKytw7rp8VLX8JSRP5FX2_BR" },
+  { thumb: "https://lh3.googleusercontent.com/d/1TvWL7eUOSNHhUebW3xNc70wUWZoI7aQc", original: "https://drive.google.com/uc?export=download&id=1TvWL7eUOSNHhUebW3xNc70wUWZoI7aQc" },
+  { thumb: "https://lh3.googleusercontent.com/d/1nbMUXqzm4ttslo83E1nQo6jTUUQAqje9", original: "https://drive.google.com/uc?export=download&id=1nbMUXqzm4ttslo83E1nQo6jTUUQAqje9" },
+  { thumb: "https://lh3.googleusercontent.com/d/1RjtWZNHshAVuIjRvHD1t4iq5sP12SAfU", original: "https://drive.google.com/uc?export=download&id=1RjtWZNHshAVuIjRvHD1t4iq5sP12SAfU" },
+  { thumb: "https://lh3.googleusercontent.com/d/17EsHekxxVdyEMR-JR1lWU0RkogHTdeXy", original: "https://drive.google.com/uc?export=download&id=17EsHekxxVdyEMR-JR1lWU0RkogHTdeXy" },
+  { thumb: "https://lh3.googleusercontent.com/d/1dJS3rauwKaFZEpcIsJJgNYgvBBtv0ysQ", original: "https://drive.google.com/uc?export=download&id=1dJS3rauwKaFZEpcIsJJgNYgvBBtv0ysQ" },
+  { thumb: "https://lh3.googleusercontent.com/d/13D_oPUMvwj4CYF6BEluW03c3oMK1ByI5", original: "https://drive.google.com/uc?export=download&id=13D_oPUMvwj4CYF6BEluW03c3oMK1ByI5" },
+  { thumb: "https://lh3.googleusercontent.com/d/1dOfpjjY9xVTu5I6ZnYQa7KWuTg9kJyhU", original: "https://drive.google.com/uc?export=download&id=1dOfpjjY9xVTu5I6ZnYQa7KWuTg9kJyhU" },
+  { thumb: "https://lh3.googleusercontent.com/d/1_IIK3vUDNUrPlsGJ8a4EPcTy2tk0nvJV", original: "https://drive.google.com/uc?export=download&id=1_IIK3vUDNUrPlsGJ8a4EPcTy2tk0nvJV" },
+  { thumb: "https://lh3.googleusercontent.com/d/1xUZgdjSvK-AXLVBdzHiLCrSgaQJ3nWRV", original: "https://drive.google.com/uc?export=download&id=1xUZgdjSvK-AXLVBdzHiLCrSgaQJ3nWRV" },
+  { thumb: "https://lh3.googleusercontent.com/d/1d9EZZkawiU5fCLnxntY9YvJVdgZbpX2v", original: "https://drive.google.com/uc?export=download&id=1d9EZZkawiU5fCLnxntY9YvJVdgZbpX2v" },
+  { thumb: "https://lh3.googleusercontent.com/d/1p55SeRFL97qUYZa9x4u-nxJyGT_JXV0j", original: "https://drive.google.com/uc?export=download&id=1p55SeRFL97qUYZa9x4u-nxJyGT_JXV0j" },
+  { thumb: "https://lh3.googleusercontent.com/d/1u0Jq1W6wg5uqXIL_URYhFgzzeKAqZstx", original: "https://drive.google.com/uc?export=download&id=1u0Jq1W6wg5uqXIL_URYhFgzzeKAqZstx" },
+  { thumb: "https://lh3.googleusercontent.com/d/1SSf5w07bXopzocbxQGmsMmhUJFj89mI1", original: "https://drive.google.com/uc?export=download&id=1SSf5w07bXopzocbxQGmsMmhUJFj89mI1" },
+  { thumb: "https://lh3.googleusercontent.com/d/15Z7ca-vowBRJv0TLW6vKathp6C7nnSr5", original: "https://drive.google.com/uc?export=download&id=15Z7ca-vowBRJv0TLW6vKathp6C7nnSr5" },
+  { thumb: "https://lh3.googleusercontent.com/d/1_jlrHePw6oaKLoGB38lO860AeOsoIEKO", original: "https://drive.google.com/uc?export=download&id=1_jlrHePw6oaKLoGB38lO860AeOsoIEKO" },
+  { thumb: "https://lh3.googleusercontent.com/d/1IcWU8mjmf8FH5NqP_eFIKQMB_-nPkYGD", original: "https://drive.google.com/uc?export=download&id=1IcWU8mjmf8FH5NqP_eFIKQMB_-nPkYGD" },
+  { thumb: "https://lh3.googleusercontent.com/d/1Vc8WPzKV-2bL_W-uXnXIyZgKkJ5KbMrg", original: "https://drive.google.com/uc?export=download&id=1Vc8WPzKV-2bL_W-uXnXIyZgKkJ5KbMrg" },
+  { thumb: "https://lh3.googleusercontent.com/d/1GvYG84a_q-ds7hjOPDc5J1hhdlQkyhOX", original: "https://drive.google.com/uc?export=download&id=1GvYG84a_q-ds7hjOPDc5J1hhdlQkyhOX" },
+  { thumb: "https://lh3.googleusercontent.com/d/19Uo-NRP3EcILY7trE802Y8jKGSSENdT-", original: "https://drive.google.com/uc?export=download&id=19Uo-NRP3EcILY7trE802Y8jKGSSENdT-" },
+  { thumb: "https://lh3.googleusercontent.com/d/1gQXowRohdeNVC3E1SMZLsese0AQyMrg_", original: "https://drive.google.com/uc?export=download&id=1gQXowRohdeNVC3E1SMZLsese0AQyMrg_" },
+  { thumb: "https://lh3.googleusercontent.com/d/1eIUIfAVR20UilIIYfje1MWV2DUH0DpqX", original: "https://drive.google.com/uc?export=download&id=1eIUIfAVR20UilIIYfje1MWV2DUH0DpqX" },
+  { thumb: "https://lh3.googleusercontent.com/d/1XrPsQJOxLOdGv0rg5-8r7LsmCVQrXdBd", original: "https://drive.google.com/uc?export=download&id=1XrPsQJOxLOdGv0rg5-8r7LsmCVQrXdBd" },
+  { thumb: "https://lh3.googleusercontent.com/d/1l39xoN0RDBf7RsvjvZ9QXt4ztCuVn0Ai", original: "https://drive.google.com/uc?export=download&id=1l39xoN0RDBf7RsvjvZ9QXt4ztCuVn0Ai" },
+  { thumb: "https://lh3.googleusercontent.com/d/1DRiwlOIqEotfnCVp0p2_SBHMrEpOW99u", original: "https://drive.google.com/uc?export=download&id=1DRiwlOIqEotfnCVp0p2_SBHMrEpOW99u" },
+  { thumb: "https://lh3.googleusercontent.com/d/1HaiOZFb_U84xkCAZ1ZcPpsebBMihBWkX", original: "https://drive.google.com/uc?export=download&id=1HaiOZFb_U84xkCAZ1ZcPpsebBMihBWkX" },
+  { thumb: "https://lh3.googleusercontent.com/d/1C197_-jJPtll64J-16F8lgWz_6WAmz_w", original: "https://drive.google.com/uc?export=download&id=1C197_-jJPtll64J-16F8lgWz_6WAmz_w" },
+  { thumb: "https://lh3.googleusercontent.com/d/1YJz1xS2rG87YCPpfw3AGX9LsM_fsJxki", original: "https://drive.google.com/uc?export=download&id=1YJz1xS2rG87YCPpfw3AGX9LsM_fsJxki" },
+  { thumb: "https://lh3.googleusercontent.com/d/1xFHKjjVhcgOaVbP307imbYm791YhWpMB", original: "https://drive.google.com/uc?export=download&id=1xFHKjjVhcgOaVbP307imbYm791YhWpMB" },
+  { thumb: "https://lh3.googleusercontent.com/d/1I4Ys49Mmp1e0UTGt_Q9wj6PXG2AEAu8B", original: "https://drive.google.com/uc?export=download&id=1I4Ys49Mmp1e0UTGt_Q9wj6PXG2AEAu8B" },
+  { thumb: "https://lh3.googleusercontent.com/d/1ZkGvV9bWipkn6QKHSoyiouP0L2bRSX0q", original: "https://drive.google.com/uc?export=download&id=1ZkGvV9bWipkn6QKHSoyiouP0L2bRSX0q" },
+  { thumb: "https://lh3.googleusercontent.com/d/1eDf3yryLSLRJVVw14ixxf5CIBWVn45j3", original: "https://drive.google.com/uc?export=download&id=1eDf3yryLSLRJVVw14ixxf5CIBWVn45j3" },
+  { thumb: "https://lh3.googleusercontent.com/d/19p6U3F_ekR1KeIF0ciX_rvBd8A2NWOH5", original: "https://drive.google.com/uc?export=download&id=19p6U3F_ekR1KeIF0ciX_rvBd8A2NWOH5" },
+  { thumb: "https://lh3.googleusercontent.com/d/1jabf6aRsv3iBCJ7WaN2UZHZF2CD3jbDB", original: "https://drive.google.com/uc?export=download&id=1jabf6aRsv3iBCJ7WaN2UZHZF2CD3jbDB" },
+  { thumb: "https://lh3.googleusercontent.com/d/1XifK_bmIslHmqrZXiUsUQNEygGtvgLeZ", original: "https://drive.google.com/uc?export=download&id=1XifK_bmIslHmqrZXiUsUQNEygGtvgLeZ" },
+  { thumb: "https://lh3.googleusercontent.com/d/1-iftJsIgKxTqmTVnedkODDpUy83jb_1U", original: "https://drive.google.com/uc?export=download&id=1-iftJsIgKxTqmTVnedkODDpUy83jb_1U" },
+  { thumb: "https://lh3.googleusercontent.com/d/1nY61QM3Tnv8dgvvIg__dgrTwXnMMxRzZ", original: "https://drive.google.com/uc?export=download&id=1nY61QM3Tnv8dgvvIg__dgrTwXnMMxRzZ" },
+  { thumb: "https://lh3.googleusercontent.com/d/1xL6UjvjmsJoF_HIvaXBRdrIyQjfNzqYg", original: "https://drive.google.com/uc?export=download&id=1xL6UjvjmsJoF_HIvaXBRdrIyQjfNzqYg" },
+  { thumb: "https://lh3.googleusercontent.com/d/1u652XsU2lvNNAymIp_GoiOuxa38HZ0c_", original: "https://drive.google.com/uc?export=download&id=1u652XsU2lvNNAymIp_GoiOuxa38HZ0c_" },
+  { thumb: "https://lh3.googleusercontent.com/d/1erq5XJ5Jic5OMG_gbjAcjeH5tEWeYD-h", original: "https://drive.google.com/uc?export=download&id=1erq5XJ5Jic5OMG_gbjAcjeH5tEWeYD-h" },
+  { thumb: "https://lh3.googleusercontent.com/d/1tXLmBH4sCkk-c42AsJLncrJtwy6Jh0z_", original: "https://drive.google.com/uc?export=download&id=1tXLmBH4sCkk-c42AsJLncrJtwy6Jh0z_" },
+  { thumb: "https://lh3.googleusercontent.com/d/1JFpmBniT9YEFYv37t3HWQhBE7g9L_hf6", original: "https://drive.google.com/uc?export=download&id=1JFpmBniT9YEFYv37t3HWQhBE7g9L_hf6" },
+  { thumb: "https://lh3.googleusercontent.com/d/1uMkpXi47U5q1JyCuX73zYC_kDwwmNrKG", original: "https://drive.google.com/uc?export=download&id=1uMkpXi47U5q1JyCuX73zYC_kDwwmNrKG" },
+  { thumb: "https://lh3.googleusercontent.com/d/1ABRMGiYOftQcaPmJ6VBXzI60oGJj_Peh", original: "https://drive.google.com/uc?export=download&id=1ABRMGiYOftQcaPmJ6VBXzI60oGJj_Peh" },
+  { thumb: "https://lh3.googleusercontent.com/d/1sKOjDG_RYINp1aODRnHSfvUY8DbyykZG", original: "https://drive.google.com/uc?export=download&id=1sKOjDG_RYINp1aODRnHSfvUY8DbyykZG" },
+  { thumb: "https://lh3.googleusercontent.com/d/1zpzV1N2Riz_529nyC7lo8A-zU-Dicq3x", original: "https://drive.google.com/uc?export=download&id=1zpzV1N2Riz_529nyC7lo8A-zU-Dicq3x" },
+  { thumb: "https://lh3.googleusercontent.com/d/1JDnW6OuWlYGjKQsIcCskheKeSdEnguJs", original: "https://drive.google.com/uc?export=download&id=1JDnW6OuWlYGjKQsIcCskheKeSdEnguJs" },
+  { thumb: "https://lh3.googleusercontent.com/d/19freljnK3fTYQx3lZzLYQ8WhV3L35w0l", original: "https://drive.google.com/uc?export=download&id=19freljnK3fTYQx3lZzLYQ8WhV3L35w0l" },
+  { thumb: "https://lh3.googleusercontent.com/d/17_13wtLM2exWTXev0saRxofFW6Tm2uQs", original: "https://drive.google.com/uc?export=download&id=17_13wtLM2exWTXev0saRxofFW6Tm2uQs" },
+  { thumb: "https://lh3.googleusercontent.com/d/1FunKphFCD4ODOnVZWtBpY6bZwrGNeSBR", original: "https://drive.google.com/uc?export=download&id=1FunKphFCD4ODOnVZWtBpY6bZwrGNeSBR" },
+  { thumb: "https://lh3.googleusercontent.com/d/1e6OjwgTWJmN_eBXcOJ-SSDWNLEUCZOXl", original: "https://drive.google.com/uc?export=download&id=1e6OjwgTWJmN_eBXcOJ-SSDWNLEUCZOXl" },
+  { thumb: "https://lh3.googleusercontent.com/d/1l_l0xilxhJ9VnEUcHXuKvev_mIJJ1_20", original: "https://drive.google.com/uc?export=download&id=1l_l0xilxhJ9VnEUcHXuKvev_mIJJ1_20" },
+  { thumb: "https://lh3.googleusercontent.com/d/1ttCIdL9cHMM2lZXolCh04tp-l-2rs1zk", original: "https://drive.google.com/uc?export=download&id=1ttCIdL9cHMM2lZXolCh04tp-l-2rs1zk" },
+  { thumb: "https://lh3.googleusercontent.com/d/16sjsO-OWXdE40xaceerw3J3BTPQ_znzX", original: "https://drive.google.com/uc?export=download&id=16sjsO-OWXdE40xaceerw3J3BTPQ_znzX" },
+  { thumb: "https://lh3.googleusercontent.com/d/1nUhNxe0WA4jZ5XmfB7xGx9sWOfRSIxxb", original: "https://drive.google.com/uc?export=download&id=1nUhNxe0WA4jZ5XmfB7xGx9sWOfRSIxxb" },
+  { thumb: "https://lh3.googleusercontent.com/d/1icaBCIPcap9AlgwQc12CjzFoIFX5DRyV", original: "https://drive.google.com/uc?export=download&id=1icaBCIPcap9AlgwQc12CjzFoIFX5DRyV" },
+  { thumb: "https://lh3.googleusercontent.com/d/1NZMPSG-won4qfG1aXjRfpf4Up_4fDIF4", original: "https://drive.google.com/uc?export=download&id=1NZMPSG-won4qfG1aXjRfpf4Up_4fDIF4" },
+  { thumb: "https://lh3.googleusercontent.com/d/1uYIrd5nG2jDifoRnWDRVdxWoFc7lYeBw", original: "https://drive.google.com/uc?export=download&id=1uYIrd5nG2jDifoRnWDRVdxWoFc7lYeBw" },
+  { thumb: "https://lh3.googleusercontent.com/d/1xKz79DIWHiCiXUzrFj0pfIaF_ZOqK0Y9", original: "https://drive.google.com/uc?export=download&id=1xKz79DIWHiCiXUzrFj0pfIaF_ZOqK0Y9" },
+  { thumb: "https://lh3.googleusercontent.com/d/1cJtgyn1JNCWDY66LxWW5graXVRoubD3e", original: "https://drive.google.com/uc?export=download&id=1cJtgyn1JNCWDY66LxWW5graXVRoubD3e" },
+  { thumb: "https://lh3.googleusercontent.com/d/1jyix5wjBjOcW4cuVLnIsKd8lLF-exmFR", original: "https://drive.google.com/uc?export=download&id=1jyix5wjBjOcW4cuVLnIsKd8lLF-exmFR" },
+  { thumb: "https://lh3.googleusercontent.com/d/1NFj0Jucofo-DFQu5djsPZr-ImPHh5Os6", original: "https://drive.google.com/uc?export=download&id=1NFj0Jucofo-DFQu5djsPZr-ImPHh5Os6" },
+  { thumb: "https://lh3.googleusercontent.com/d/1ccMPDvHiZ_T2JDk_QITWD3jpS7QSVgIE", original: "https://drive.google.com/uc?export=download&id=1ccMPDvHiZ_T2JDk_QITWD3jpS7QSVgIE" },
+  { thumb: "https://lh3.googleusercontent.com/d/1cA2-nxenlQ7VZky3af39JmGO7UIfy5mn", original: "https://drive.google.com/uc?export=download&id=1cA2-nxenlQ7VZky3af39JmGO7UIfy5mn" },
+  { thumb: "https://lh3.googleusercontent.com/d/1jOS9-pGhJO_LK0kh4rLg5Hwsj0OkGFoc", original: "https://drive.google.com/uc?export=download&id=1jOS9-pGhJO_LK0kh4rLg5Hwsj0OkGFoc" },
+  { thumb: "https://lh3.googleusercontent.com/d/1rUuC6dSf3wgehsiw7SpXTku45WfWwFsh", original: "https://drive.google.com/uc?export=download&id=1rUuC6dSf3wgehsiw7SpXTku45WfWwFsh" },
+  { thumb: "https://lh3.googleusercontent.com/d/1WMeTWH-rHj7eR-7jMWuIdK06CEACLcq8", original: "https://drive.google.com/uc?export=download&id=1WMeTWH-rHj7eR-7jMWuIdK06CEACLcq8" },
+  { thumb: "https://lh3.googleusercontent.com/d/1KTdwSsmcfT58zUj6BLCI-GdXN1vDwOu0", original: "https://drive.google.com/uc?export=download&id=1KTdwSsmcfT58zUj6BLCI-GdXN1vDwOu0" },
+  { thumb: "https://lh3.googleusercontent.com/d/1rPZZTM7vkcOiCiD5j2QnU35EeuaxY4Xt", original: "https://drive.google.com/uc?export=download&id=1rPZZTM7vkcOiCiD5j2QnU35EeuaxY4Xt" },
+  { thumb: "https://lh3.googleusercontent.com/d/1AE3-ne2nf2fwRqOsXfCpWkXOK5qv-ln5", original: "https://drive.google.com/uc?export=download&id=1AE3-ne2nf2fwRqOsXfCpWkXOK5qv-ln5" },
+  { thumb: "https://lh3.googleusercontent.com/d/1I4IsA2p1qclbEraHdHL5JJh29J1z_Uk3", original: "https://drive.google.com/uc?export=download&id=1I4IsA2p1qclbEraHdHL5JJh29J1z_Uk3" },
+  { thumb: "https://lh3.googleusercontent.com/d/1XhfZ2p6DG43u0t4BBxF_FAKzWLSNgj-5", original: "https://drive.google.com/uc?export=download&id=1XhfZ2p6DG43u0t4BBxF_FAKzWLSNgj-5" },
+  { thumb: "https://lh3.googleusercontent.com/d/1yS1KXd1KiUdsiBWqrceqWtWd3Hr2f1Ni", original: "https://drive.google.com/uc?export=download&id=1yS1KXd1KiUdsiBWqrceqWtWd3Hr2f1Ni" },
+  { thumb: "https://lh3.googleusercontent.com/d/1IbRa_7VPzk6OCA0EXgQaPt69HskUl4PJ", original: "https://drive.google.com/uc?export=download&id=1IbRa_7VPzk6OCA0EXgQaPt69HskUl4PJ" },
+  { thumb: "https://lh3.googleusercontent.com/d/11Dt0HrmzagSK0KUzZ4WB4dPm1N2sIdWS", original: "https://drive.google.com/uc?export=download&id=11Dt0HrmzagSK0KUzZ4WB4dPm1N2sIdWS" },
+  { thumb: "https://lh3.googleusercontent.com/d/1q2n3SF2FfTmeb01pNVN7Ut6pnPBS8MO4", original: "https://drive.google.com/uc?export=download&id=1q2n3SF2FfTmeb01pNVN7Ut6pnPBS8MO4" },
+  { thumb: "https://lh3.googleusercontent.com/d/1CQpqoXVSFQAX7Can_ceUWry5b_OXuZoz", original: "https://drive.google.com/uc?export=download&id=1CQpqoXVSFQAX7Can_ceUWry5b_OXuZoz" },
+  { thumb: "https://lh3.googleusercontent.com/d/1_RZdqzm19zwCGcniNvSaX1pS6cRrie8F", original: "https://drive.google.com/uc?export=download&id=1_RZdqzm19zwCGcniNvSaX1pS6cRrie8F" },
+  { thumb: "https://lh3.googleusercontent.com/d/1igXZ-8VbNRHFQZIkuhBiWOO0KiYG15En", original: "https://drive.google.com/uc?export=download&id=1igXZ-8VbNRHFQZIkuhBiWOO0KiYG15En" },
+  { thumb: "https://lh3.googleusercontent.com/d/1zPHYfc_6E-ZB55FwSQqCf696A1xql1px", original: "https://drive.google.com/uc?export=download&id=1zPHYfc_6E-ZB55FwSQqCf696A1xql1px" },
+  { thumb: "https://lh3.googleusercontent.com/d/14l5t0XbRzUo2q94XnYTf94FyRIpWC8SX", original: "https://drive.google.com/uc?export=download&id=14l5t0XbRzUo2q94XnYTf94FyRIpWC8SX" },
+  { thumb: "https://lh3.googleusercontent.com/d/18yJYsoIB2_jwflWRHMoPwyZu_Boeq_MK", original: "https://drive.google.com/uc?export=download&id=18yJYsoIB2_jwflWRHMoPwyZu_Boeq_MK" },
+  { thumb: "https://lh3.googleusercontent.com/d/19hLVaPnJyHtXitXKgaCbP0jxBmGhDmkd", original: "https://drive.google.com/uc?export=download&id=19hLVaPnJyHtXitXKgaCbP0jxBmGhDmkd" },
+  { thumb: "https://lh3.googleusercontent.com/d/141vSt4RUvDUTMAaRI1gngLN0HZSpKlXa", original: "https://drive.google.com/uc?export=download&id=141vSt4RUvDUTMAaRI1gngLN0HZSpKlXa" },
+  { thumb: "https://lh3.googleusercontent.com/d/1dDcjSKwJGqeNYaxToHEyujXR4aAVsbUs", original: "https://drive.google.com/uc?export=download&id=1dDcjSKwJGqeNYaxToHEyujXR4aAVsbUs" },
+  { thumb: "https://lh3.googleusercontent.com/d/1fllVrV7P6SdpJx6VF-1pwO5sWJH9QHM3", original: "https://drive.google.com/uc?export=download&id=1fllVrV7P6SdpJx6VF-1pwO5sWJH9QHM3" },
+  { thumb: "https://lh3.googleusercontent.com/d/1lBguyJnAqB2AJWfloKtfRi6jMHSpphtj", original: "https://drive.google.com/uc?export=download&id=1lBguyJnAqB2AJWfloKtfRi6jMHSpphtj" },
+  { thumb: "https://lh3.googleusercontent.com/d/1Pqq4EMSyU41QbaY08IiQ7Xjv2W3OG9iZ", original: "https://drive.google.com/uc?export=download&id=1Pqq4EMSyU41QbaY08IiQ7Xjv2W3OG9iZ" },
+  { thumb: "https://lh3.googleusercontent.com/d/158-g6T6buQ2040lXWFYGPuWGyn1VKAov", original: "https://drive.google.com/uc?export=download&id=158-g6T6buQ2040lXWFYGPuWGyn1VKAov" },
+  { thumb: "https://lh3.googleusercontent.com/d/1bCFAKRX0v-rmdpwRxjQ-Plxu7E_ceBYm", original: "https://drive.google.com/uc?export=download&id=1bCFAKRX0v-rmdpwRxjQ-Plxu7E_ceBYm" },
+  { thumb: "https://lh3.googleusercontent.com/d/1uaZGJPoIahNzoj9TkgQIoG5SUlDvZ5Cr", original: "https://drive.google.com/uc?export=download&id=1uaZGJPoIahNzoj9TkgQIoG5SUlDvZ5Cr" },
+  { thumb: "https://lh3.googleusercontent.com/d/1V9zpXFPAk2S2XSwdKMVlhUQbL2gnGq7u", original: "https://drive.google.com/uc?export=download&id=1V9zpXFPAk2S2XSwdKMVlhUQbL2gnGq7u" },
+  { thumb: "https://lh3.googleusercontent.com/d/1aZ-AYZoJdIMyYTQcQ4qUSwjBQxFqLy3O", original: "https://drive.google.com/uc?export=download&id=1aZ-AYZoJdIMyYTQcQ4qUSwjBQxFqLy3O" },
+  { thumb: "https://lh3.googleusercontent.com/d/1XNzVYeT6XytFXjwu0Ybrm1YyTBxLGZgu", original: "https://drive.google.com/uc?export=download&id=1XNzVYeT6XytFXjwu0Ybrm1YyTBxLGZgu" },
+  { thumb: "https://lh3.googleusercontent.com/d/1ODRiEwAnTwKnex2IaQnxn-Qrti4BccUc", original: "https://drive.google.com/uc?export=download&id=1ODRiEwAnTwKnex2IaQnxn-Qrti4BccUc" },
+  { thumb: "https://lh3.googleusercontent.com/d/1LGYyormCc8hHWf32TuO17bJSynmOTKxc", original: "https://drive.google.com/uc?export=download&id=1LGYyormCc8hHWf32TuO17bJSynmOTKxc" },
+  { thumb: "https://lh3.googleusercontent.com/d/1fLwwqdUcN16-RQKi6ccFDTC2ury1-zqW", original: "https://drive.google.com/uc?export=download&id=1fLwwqdUcN16-RQKi6ccFDTC2ury1-zqW" },
+  { thumb: "https://lh3.googleusercontent.com/d/1snTphYESftU_cn8WrCnfNksaaqfnXnHV", original: "https://drive.google.com/uc?export=download&id=1snTphYESftU_cn8WrCnfNksaaqfnXnHV" },
+  { thumb: "https://lh3.googleusercontent.com/d/1SvxO8yxY4jQL13DygJkZZTQ18pdVq5Js", original: "https://drive.google.com/uc?export=download&id=1SvxO8yxY4jQL13DygJkZZTQ18pdVq5Js" },
+  { thumb: "https://lh3.googleusercontent.com/d/1i3F81EtOiTDwkD3bkTA6TKj3X5kfb4Y6", original: "https://drive.google.com/uc?export=download&id=1i3F81EtOiTDwkD3bkTA6TKj3X5kfb4Y6" },
+  { thumb: "https://lh3.googleusercontent.com/d/1wN7qJ05a_7icGdyfE3Or8PRJ7VIwW_oK", original: "https://drive.google.com/uc?export=download&id=1wN7qJ05a_7icGdyfE3Or8PRJ7VIwW_oK" },
+  { thumb: "https://lh3.googleusercontent.com/d/1YpxD-rHOUGxb41MLMql9RhN2al23QwJp", original: "https://drive.google.com/uc?export=download&id=1YpxD-rHOUGxb41MLMql9RhN2al23QwJp" },
+  { thumb: "https://lh3.googleusercontent.com/d/1h41wRQnp9lqqQzchVRrZXw56Ck0Ff3Yf", original: "https://drive.google.com/uc?export=download&id=1h41wRQnp9lqqQzchVRrZXw56Ck0Ff3Yf" },
+  { thumb: "https://lh3.googleusercontent.com/d/1whdPNTlIewWuoDXU7Qz2z04kmt7sqnZB", original: "https://drive.google.com/uc?export=download&id=1whdPNTlIewWuoDXU7Qz2z04kmt7sqnZB" },
+  { thumb: "https://lh3.googleusercontent.com/d/1oL-s7gj8nWBCN-o0JNOXW2ueTDaUHwhw", original: "https://drive.google.com/uc?export=download&id=1oL-s7gj8nWBCN-o0JNOXW2ueTDaUHwhw" },
+  { thumb: "https://lh3.googleusercontent.com/d/1KP7y1UmDwMKj4QHvkEIfQZNJrAKg_zXR", original: "https://drive.google.com/uc?export=download&id=1KP7y1UmDwMKj4QHvkEIfQZNJrAKg_zXR" },
+  { thumb: "https://lh3.googleusercontent.com/d/1OeOJrBHOG-VP4xuixex8OtWS90dvRhlv", original: "https://drive.google.com/uc?export=download&id=1OeOJrBHOG-VP4xuixex8OtWS90dvRhlv" },
+  { thumb: "https://lh3.googleusercontent.com/d/1WQ-YOLlouqno9K8wEjFDlimWXfeJZDzG", original: "https://drive.google.com/uc?export=download&id=1WQ-YOLlouqno9K8wEjFDlimWXfeJZDzG" },
+  { thumb: "https://lh3.googleusercontent.com/d/10jKq6fghS1kYYwxhyA6Nus6sKxvjep33", original: "https://drive.google.com/uc?export=download&id=10jKq6fghS1kYYwxhyA6Nus6sKxvjep33" },
+  { thumb: "https://lh3.googleusercontent.com/d/14yIgfJ9hT_9KhEbsjYcyqoV33GwwTxWv", original: "https://drive.google.com/uc?export=download&id=14yIgfJ9hT_9KhEbsjYcyqoV33GwwTxWv" },
+  { thumb: "https://lh3.googleusercontent.com/d/1vZkXn2PVaAM19XYYI6MNn0p4eznSP_VT", original: "https://drive.google.com/uc?export=download&id=1vZkXn2PVaAM19XYYI6MNn0p4eznSP_VT" },
+  { thumb: "https://lh3.googleusercontent.com/d/1LmxfYBh4Kw_Aohwt_6AnoEvEt_m-N8Xl", original: "https://drive.google.com/uc?export=download&id=1LmxfYBh4Kw_Aohwt_6AnoEvEt_m-N8Xl" },
+  { thumb: "https://lh3.googleusercontent.com/d/145Omsk4WFD6pX6BCyFuCX1uAxzWaDWU6", original: "https://drive.google.com/uc?export=download&id=145Omsk4WFD6pX6BCyFuCX1uAxzWaDWU6" },
+  { thumb: "https://lh3.googleusercontent.com/d/1tFmTZH8Dr6Hvr5rviusqfUBieX8_NC7t", original: "https://drive.google.com/uc?export=download&id=1tFmTZH8Dr6Hvr5rviusqfUBieX8_NC7t" },
+  { thumb: "https://lh3.googleusercontent.com/d/1kRpFPijG0WMW4f8uoZ7qfVRj-Qm733rr", original: "https://drive.google.com/uc?export=download&id=1kRpFPijG0WMW4f8uoZ7qfVRj-Qm733rr" },
+  { thumb: "https://lh3.googleusercontent.com/d/1o_ADKagVByvw0hK11Wk2EHfhKC_pUpo2", original: "https://drive.google.com/uc?export=download&id=1o_ADKagVByvw0hK11Wk2EHfhKC_pUpo2" },
+  { thumb: "https://lh3.googleusercontent.com/d/1VZIHXsUI3mLaAO1vJ64OnQKvoKwFHlP9", original: "https://drive.google.com/uc?export=download&id=1VZIHXsUI3mLaAO1vJ64OnQKvoKwFHlP9" },
+  { thumb: "https://lh3.googleusercontent.com/d/1e-0IdLQiRb4xfuzi8ZlA8qN42IYuBm2b", original: "https://drive.google.com/uc?export=download&id=1e-0IdLQiRb4xfuzi8ZlA8qN42IYuBm2b" },
+  { thumb: "https://lh3.googleusercontent.com/d/1bU2-Ynwcs_NAzWV6qpB3BN7eGCNUNg-V", original: "https://drive.google.com/uc?export=download&id=1bU2-Ynwcs_NAzWV6qpB3BN7eGCNUNg-V" },
+  { thumb: "https://lh3.googleusercontent.com/d/1WttcY9bBIc9EEkzvFy7OsR1-F1by3cs3", original: "https://drive.google.com/uc?export=download&id=1WttcY9bBIc9EEkzvFy7OsR1-F1by3cs3" },
+  { thumb: "https://lh3.googleusercontent.com/d/1dafBBhYLdL9I7G3CISGJ402Srq06qEKc", original: "https://drive.google.com/uc?export=download&id=1dafBBhYLdL9I7G3CISGJ402Srq06qEKc" },
+  { thumb: "https://lh3.googleusercontent.com/d/1gYqDV5GcbQ1x9uQzsq8AzE-W73DhPvYl", original: "https://drive.google.com/uc?export=download&id=1gYqDV5GcbQ1x9uQzsq8AzE-W73DhPvYl" },
+  { thumb: "https://lh3.googleusercontent.com/d/1cVSj23AiLPlfNWW9p3dcrtEdA0ZOFqJo", original: "https://drive.google.com/uc?export=download&id=1cVSj23AiLPlfNWW9p3dcrtEdA0ZOFqJo" },
+  { thumb: "https://lh3.googleusercontent.com/d/1VaaLq9MgNcM4OAzrIivcM9oqlUkPqow1", original: "https://drive.google.com/uc?export=download&id=1VaaLq9MgNcM4OAzrIivcM9oqlUkPqow1" },
+  { thumb: "https://lh3.googleusercontent.com/d/1Ejnhw4pwq9SyQrF4cqDpJ3DzKNHnlSed", original: "https://drive.google.com/uc?export=download&id=1Ejnhw4pwq9SyQrF4cqDpJ3DzKNHnlSed" },
+  { thumb: "https://lh3.googleusercontent.com/d/13v4ccRJqEDFPlS9ZobX6zlgkoMjxuThC", original: "https://drive.google.com/uc?export=download&id=13v4ccRJqEDFPlS9ZobX6zlgkoMjxuThC" },
+  { thumb: "https://lh3.googleusercontent.com/d/128nqrksGVP15c1FhuPrr7GpumC4M6Nrc", original: "https://drive.google.com/uc?export=download&id=128nqrksGVP15c1FhuPrr7GpumC4M6Nrc" },
+  { thumb: "https://lh3.googleusercontent.com/d/1Y1-W8Q9DmZfUceknYdSHzLuq5CSy3ddj", original: "https://drive.google.com/uc?export=download&id=1Y1-W8Q9DmZfUceknYdSHzLuq5CSy3ddj" },
+  { thumb: "https://lh3.googleusercontent.com/d/1WGU8yKnoJ9Q043lGrx0m6hxmecmZScXv", original: "https://drive.google.com/uc?export=download&id=1WGU8yKnoJ9Q043lGrx0m6hxmecmZScXv" },
+  { thumb: "https://lh3.googleusercontent.com/d/1TQ_DvswXhXuaVSMUIlAo7uLv2dDBWed6", original: "https://drive.google.com/uc?export=download&id=1TQ_DvswXhXuaVSMUIlAo7uLv2dDBWed6" },
+  { thumb: "https://lh3.googleusercontent.com/d/1DV3QqOItOMsUSKH8L6v3LkopzoExSjsI", original: "https://drive.google.com/uc?export=download&id=1DV3QqOItOMsUSKH8L6v3LkopzoExSjsI" },
+  { thumb: "https://lh3.googleusercontent.com/d/1CHrHnv9sbckLgjuJd98rXAwwHkjRdDmY", original: "https://drive.google.com/uc?export=download&id=1CHrHnv9sbckLgjuJd98rXAwwHkjRdDmY" },
+  { thumb: "https://lh3.googleusercontent.com/d/1BkZ72Ej-OVqtU2zhNGR9-UgSSW6POnEv", original: "https://drive.google.com/uc?export=download&id=1BkZ72Ej-OVqtU2zhNGR9-UgSSW6POnEv" },
+  { thumb: "https://lh3.googleusercontent.com/d/1gH5lH8j250mY5bmoZvxIdcrPZlMWfwq9", original: "https://drive.google.com/uc?export=download&id=1gH5lH8j250mY5bmoZvxIdcrPZlMWfwq9" },
+  { thumb: "https://lh3.googleusercontent.com/d/1A-xJ8DY7lWPFpmdjwQdGI3KEihHBjyAd", original: "https://drive.google.com/uc?export=download&id=1A-xJ8DY7lWPFpmdjwQdGI3KEihHBjyAd" },
+  { thumb: "https://lh3.googleusercontent.com/d/1knElKlpAgr0QOpTRZfDV_1nU3YgTzFy_", original: "https://drive.google.com/uc?export=download&id=1knElKlpAgr0QOpTRZfDV_1nU3YgTzFy_" },
+  { thumb: "https://lh3.googleusercontent.com/d/1IqbNJ--u8A3L-IFaQdcz6nG2I_i06xWk", original: "https://drive.google.com/uc?export=download&id=1IqbNJ--u8A3L-IFaQdcz6nG2I_i06xWk" },
+  { thumb: "https://lh3.googleusercontent.com/d/1iPId_2Fda9fzhrw9029Cch3pLJJF3Fo4", original: "https://drive.google.com/uc?export=download&id=1iPId_2Fda9fzhrw9029Cch3pLJJF3Fo4" },
+  { thumb: "https://lh3.googleusercontent.com/d/1wWuOBpS080CoXMg4J_dKLcTa6YT_K8Iu", original: "https://drive.google.com/uc?export=download&id=1wWuOBpS080CoXMg4J_dKLcTa6YT_K8Iu" },
+  { thumb: "https://lh3.googleusercontent.com/d/1lsdbSO_MtjQqqmVqGa3_ulMquZjsHpKT", original: "https://drive.google.com/uc?export=download&id=1lsdbSO_MtjQqqmVqGa3_ulMquZjsHpKT" },
+  { thumb: "https://lh3.googleusercontent.com/d/1W2yWSd2e5H8XwZV_4y3foRjElAAbu87k", original: "https://drive.google.com/uc?export=download&id=1W2yWSd2e5H8XwZV_4y3foRjElAAbu87k" },
+  { thumb: "https://lh3.googleusercontent.com/d/1D_H22kn5kr9ZNUz-CvPhdiWLbg6BzycH", original: "https://drive.google.com/uc?export=download&id=1D_H22kn5kr9ZNUz-CvPhdiWLbg6BzycH" },
+  { thumb: "https://lh3.googleusercontent.com/d/1dAK9Njy1ku92wh0810Ooflr2RaQlmOu0", original: "https://drive.google.com/uc?export=download&id=1dAK9Njy1ku92wh0810Ooflr2RaQlmOu0" },
+  { thumb: "https://lh3.googleusercontent.com/d/1pqj-wKzYNyH7kOqE9CktfL9J8eu_cF08", original: "https://drive.google.com/uc?export=download&id=1pqj-wKzYNyH7kOqE9CktfL9J8eu_cF08" },
+  { thumb: "https://lh3.googleusercontent.com/d/1sJz9NY7w5NnbuKX08aIRiLKuYs53DuUH", original: "https://drive.google.com/uc?export=download&id=1sJz9NY7w5NnbuKX08aIRiLKuYs53DuUH" },
+  { thumb: "https://lh3.googleusercontent.com/d/1U_jYNrgZzjcm5Q6dAvDXIwiybeSNe_ET", original: "https://drive.google.com/uc?export=download&id=1U_jYNrgZzjcm5Q6dAvDXIwiybeSNe_ET" },
+  { thumb: "https://lh3.googleusercontent.com/d/1No1p20fjfPLxYswNPtb2QSw0MjCBJg84", original: "https://drive.google.com/uc?export=download&id=1No1p20fjfPLxYswNPtb2QSw0MjCBJg84" },
+  { thumb: "https://lh3.googleusercontent.com/d/1ci_Fk5fkTmQEJChPqhvasa6ABdn_nHl-", original: "https://drive.google.com/uc?export=download&id=1ci_Fk5fkTmQEJChPqhvasa6ABdn_nHl-" },
+  { thumb: "https://lh3.googleusercontent.com/d/1LA7XZkxkgddAdOQFACq-EVtWQp_I3LWt", original: "https://drive.google.com/uc?export=download&id=1LA7XZkxkgddAdOQFACq-EVtWQp_I3LWt" },
+  { thumb: "https://lh3.googleusercontent.com/d/16RxBofsGagrj0rgBPAeVp50gIEf0CTEZ", original: "https://drive.google.com/uc?export=download&id=16RxBofsGagrj0rgBPAeVp50gIEf0CTEZ" },
+  { thumb: "https://lh3.googleusercontent.com/d/1lNWQc3OZlhX0spW45U1saCoJelWYtYFh", original: "https://drive.google.com/uc?export=download&id=1lNWQc3OZlhX0spW45U1saCoJelWYtYFh" },
+  { thumb: "https://lh3.googleusercontent.com/d/1WSfYtz9tiKG_NF9h1_Ng_ca2zAfKQHk3", original: "https://drive.google.com/uc?export=download&id=1WSfYtz9tiKG_NF9h1_Ng_ca2zAfKQHk3" },
+  { thumb: "https://lh3.googleusercontent.com/d/1E0f-3cCHX4lvh5GqbLvUK19bSi7EsvcD", original: "https://drive.google.com/uc?export=download&id=1E0f-3cCHX4lvh5GqbLvUK19bSi7EsvcD" },
+  { thumb: "https://lh3.googleusercontent.com/d/1DOwrQYr8hSJ5SEZP81iu6J26JRjHGqgI", original: "https://drive.google.com/uc?export=download&id=1DOwrQYr8hSJ5SEZP81iu6J26JRjHGqgI" },
+  { thumb: "https://lh3.googleusercontent.com/d/1_ttjxEKcozAtmdngMtkcYtMhd0k7ror5", original: "https://drive.google.com/uc?export=download&id=1_ttjxEKcozAtmdngMtkcYtMhd0k7ror5" },
+  { thumb: "https://lh3.googleusercontent.com/d/1VHzoCaJNWmr6aaiUaK8YZ4c2xsTX_BKW", original: "https://drive.google.com/uc?export=download&id=1VHzoCaJNWmr6aaiUaK8YZ4c2xsTX_BKW" },
+  { thumb: "https://lh3.googleusercontent.com/d/19XqKboSua6Ypwsg7pg0EONVWfjRF9MZU", original: "https://drive.google.com/uc?export=download&id=19XqKboSua6Ypwsg7pg0EONVWfjRF9MZU" },
+  { thumb: "https://lh3.googleusercontent.com/d/1q_fV4njukccYARCVg0YedDOwEX0-4A6U", original: "https://drive.google.com/uc?export=download&id=1q_fV4njukccYARCVg0YedDOwEX0-4A6U" },
+  { thumb: "https://lh3.googleusercontent.com/d/1n0QAasCIxRNyvcAyvC68wk8_teh1_Mlk", original: "https://drive.google.com/uc?export=download&id=1n0QAasCIxRNyvcAyvC68wk8_teh1_Mlk" },
+  { thumb: "https://lh3.googleusercontent.com/d/13Pimt9I28Z7_OYku3hju1XeMeRiIQq-L", original: "https://drive.google.com/uc?export=download&id=13Pimt9I28Z7_OYku3hju1XeMeRiIQq-L" },
+  { thumb: "https://lh3.googleusercontent.com/d/1Ym1tJiTeSKyZpyj3wJ-90Ny4x2zXottw", original: "https://drive.google.com/uc?export=download&id=1Ym1tJiTeSKyZpyj3wJ-90Ny4x2zXottw" },
+  { thumb: "https://lh3.googleusercontent.com/d/1fE4Y0npnXKWTtp153pOustdFu6Vhwh8v", original: "https://drive.google.com/uc?export=download&id=1fE4Y0npnXKWTtp153pOustdFu6Vhwh8v" },
+  { thumb: "https://lh3.googleusercontent.com/d/1CeHe5JCZYL0RkykPyiAOImUU8AJgZGNf", original: "https://drive.google.com/uc?export=download&id=1CeHe5JCZYL0RkykPyiAOImUU8AJgZGNf" },
+  { thumb: "https://lh3.googleusercontent.com/d/1Y-rW_H7RzOcU3GABzNXbQqejF0cBWqP7", original: "https://drive.google.com/uc?export=download&id=1Y-rW_H7RzOcU3GABzNXbQqejF0cBWqP7" },
+  { thumb: "https://lh3.googleusercontent.com/d/10VIKNCs6GRSqCOSHCpO6OE0i4Eb5JneA", original: "https://drive.google.com/uc?export=download&id=10VIKNCs6GRSqCOSHCpO6OE0i4Eb5JneA" },
+  { thumb: "https://lh3.googleusercontent.com/d/188QdHQrDcNf51mAzEc5XjfrI9qEBV5Qq", original: "https://drive.google.com/uc?export=download&id=188QdHQrDcNf51mAzEc5XjfrI9qEBV5Qq" }
         ];
 
         const gallery = document.getElementById('image-gallery');
 
-        photoLinks.forEach(url => {
+        photos.forEach(photo => {
             const item = document.createElement('div');
             item.className = 'item';
             
             const img = document.createElement('img');
-            img.src = url;
-            img.loading = "lazy"; // Ленивая загрузка для быстрой работы страницы
+            img.src = photo.thumb;
+            img.loading = "lazy";
             
-            // При клике картинка открывается в новом окне в оригинальном разрешении
-            img.onclick = () => window.open(url, '_blank');
+            // По клику файл начнет скачиваться с оригинальным именем из Google Диска
+            img.onclick = () => window.open(photo.original, '_blank');
 
             item.appendChild(img);
             gallery.appendChild(item);
