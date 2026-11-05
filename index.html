@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотосессия</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        p.subtitle {
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+        /* Стиль для кнопки скачивания */
+        .download-btn {
+            display: inline-block;
+            background-color: #0070f3;
+            color: #fff;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 40px;
+            transition: background-color 0.2s, transform 0.1s;
+            box-shadow: 0 4px 10px rgba(0, 112, 243, 0.3);
+        }
+        .download-btn:hover {
+            background-color: #0051d5;
+            transform: translateY(-2px);
+        }
+        /* Сетка для плитки */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .item {
+            background: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+        .item:hover {
+            transform: scale(1.02);
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Фотосессия для клиента</h1>
+    <p class="subtitle">Нажмите на любую фотографию, чтобы открыть её в исходном качестве</p>
+
+    <!-- Кнопка скачивания всех фото -->
+    <a href="ССЫЛКА_НА_ПАПКУ_ИЛИ_АРХИВ_НА_ДИСКЕ" class="download-btn" target="_blank">
+        📥 Скачать все фото архивом
+    </a>
+
+    <div class="gallery" id="image-gallery">
+        <!-- Скрипт автоматически добавит сюда фото -->
+    </div>
+
+    <script>
+        // Сюда вставляете ваши прямые ссылки из Google Диска
+        const photoLinks = [
+            "https://lh3.googleusercontent.com/d/ПРИМЕР_ID_1",
+            "https://lh3.googleusercontent.com/d/ПРИМЕР_ID_2",
+            // добавьте остальные ссылки через запятую в кавычках...
+        ];
+
+        const gallery = document.getElementById('image-gallery');
+
+        photoLinks.forEach(url => {
+            const item = document.createElement('div');
+            item.className = 'item';
+            
+            const img = document.createElement('img');
+            img.src = url;
+            img.loading = "lazy"; // Ленивая загрузка для быстрой работы страницы
+            
+            // При клике картинка открывается в новом окне в оригинальном разрешении
+            img.onclick = () => window.open(url, '_blank');
+
+            item.appendChild(img);
+            gallery.appendChild(item);
+        });
+    </script>
+
+</body>
+</html>
